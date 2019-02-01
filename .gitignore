@@ -78,3 +78,9 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+#dist files
+dist
+
+#private files (to be kept local only)
+private

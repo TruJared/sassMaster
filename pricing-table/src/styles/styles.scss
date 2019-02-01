@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+// color pallette
+$white: #fff;
+$light-gray: rgba(#000, 0.1);
+$dark-gray: rgba(#000, 0.5);
+$green: #7eb432;
+
+// color assignments
+$accent: $green;
+$body: $dark-gray;
+$heading: $accent;
+
+// typography
+$primary-font: 'Raleway', sans-serif;
+
+$fw-l: 300;
+$fw-m: 400;
+$fw-b: 700;
+
+$ls: 0.5rem;
+
+// constants
+$spacer: 1rem;
+$shadow: 0 0 $spacer $light-gray;
+
+// general
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: $primary-font;
+  font-size: 1.8rem;
+  color: $body;
+}
+
+h2 {
+  font-size: 3.5rem;
+  font-weight: $fw-l;
+  color: $heading;
+  letter-spacing: $ls;
+  text-transform: uppercase;
+  padding-bottom: $spacer * 1.5;
+}
+
+// buttons
+
+.button {
+  display: inline-block;
+  padding: ($spacer * 1.5) ($spacer * 2.5);
+  background: $dark-gray;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: $fw-b;
+  color: $white;
+  font-size: 1.25rem;
+  letter-spacing: $ls * 0.7;
+  transition: all ease-out 0.5s;
+  border-radius: 5px;
+
+  &:hover {
+    box-shadow: $shadow;
+    background: $accent;
+    transform: scale(1.1);
+  }
+
+  &--accent {
+    background: $white;
+    color: $accent;
+
+    &:hover {
+      background: $dark-gray;
+      color: $white;
+    }
+  }
+}
+
+// pricing
+
+.pricing {
+  text-align: center;
+}
+
+.prices {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.price {
+  background: $white;
+  box-shadow: $shadow;
+  padding: 5 * $spacer;
+
+  // works if sibling has .price AND element has .price
+  & + & {
+    margin-left: $spacer * 2;
+  }
+
+  &__title {
+    color: $heading;
+    font-weight: $fw-b;
+    letter-spacing: $ls;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__list-item {
+    &:not(:last-of-type)::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: $light-gray;
+      margin: ($spacer * 1.75) 0;
+    }
+  }
+
+  &__cost {
+    font-size: 5rem;
+    font-weight: $fw-b;
+    color: $accent;
+
+    span {
+      font-size: 1.6rem;
+      font-weight: $fw-l;
+      color: $body;
+    }
+  }
+
+  &--accent {
+    background: $accent;
+    padding-top: $spacer * 8;
+    padding-bottom: $spacer * 8;
+    // padding 5 - padding 8 -> creates the offset effect
+    margin-top: $spacer - 3;
+
+    & .price__title,
+    & .price__cost {
+      color: $white;
+    }
+  }
+}
