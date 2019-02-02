@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500,900');
+@import 'partials/variables';
+@import 'partials/mixins';
+
+// general
+html {
+  font-size: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @include font;
+  font-family: $primary-font;
+  background: $background;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// card
+.card {
+  width: 450px;
+  background: $primary;
+  background: linear-gradient(to top left, $secondary, $primary 65%);
+  @include box-shadow($blur: 25px, $spread: 15px);
+  position: relative;
+  padding: $spacer * 1.5 $spacer * 2 $spacer * 1.5 $spacer * 20;
+  border-radius: 5px;
+
+  &__image {
+    position: absolute;
+    top: 5%;
+    left: -21%;
+  }
+
+  &__title {
+    @include font(6rem, $fw-l, #fff, 1.25);
+    text-align: right;
+    letter-spacing: $spacer * 0.5;
+    text-transform: uppercase;
+    margin-bottom: $spacer;
+
+    &::first-letter {
+      font-size: 8rem;
+      color: $highlight;
+      border-bottom: 5px solid $accent-color;
+    }
+  }
+
+  &__price {
+    @include font(5rem, $fw-l, lighten($font-color, 10));
+    text-align: right;
+    margin-right: $spacer * 6.5;
+    margin-bottom: $spacer;
+
+    span {
+      font-size: 3rem;
+    }
+  }
+
+  &__desc {
+    @include font($size: 1.75rem, $line-h: 1.5);
+    padding: $spacer;
+    margin-bottom: $spacer;
+  }
+}
+
+.btn {
+  @include button($spacer * 1.25 $spacer * 2.5);
+  transition: all ease-in 0.35s;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &--accent {
+    @include button($spacer * 1.25 $spacer * 2.5, $highlight);
+    background: $accent-color;
+    border-bottom: 1px solid $highlight;
+    border-right: 1px solid $highlight;
+
+    &:hover {
+      transform: scale(0.99);
+      color: #fff;
+    }
+  }
+}

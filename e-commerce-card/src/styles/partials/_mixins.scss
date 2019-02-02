@@ -1,0 +1,26 @@
+@mixin font($size: 1.6rem, $weight: $fw-n, $color: $font-color, $line-h: 1.35) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  line-height: $line-h;
+}
+
+@mixin box-shadow(
+  $ho: 0,
+  $vo: 0,
+  $blur: 0,
+  $spread: 0,
+  $color: rgba(black, 0.1)
+) {
+  box-shadow: $ho $vo $blur $spread $color;
+}
+
+@mixin button($padding, $color: $font-color) {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: $spacer * 0.05;
+  padding: $padding;
+  color: $color;
+  border-radius: 5px;
+}

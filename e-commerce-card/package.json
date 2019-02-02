@@ -1,0 +1,18 @@
+{
+  "name": "e-commerce-card",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./src/views/index.html",
+    "build": "parcel build ./src/views/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.16.1"
+  }
+}
